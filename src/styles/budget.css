@@ -1,0 +1,76 @@
+.budget-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.budget-row > div {
+  border-radius: 5px;
+  padding: 1rem;
+  height: 3.5rem;
+}
+
+.set-budget {
+  background: lightgray;
+}
+
+.budget-remaining {
+  background: rgba(144, 238, 144, 0.5);
+  color: green;
+}
+
+.budget-spent {
+  background: lightblue;
+  color: blue;
+}
+
+.currency-select {
+  position: relative;
+  background: lightgray;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.select-control {
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  pointer-events: all;
+  width: 100%;
+}
+
+.select-control:hover {
+  background: white;
+  cursor: pointer;
+}
+
+.select-options-container {
+  position: absolute;
+  width: fit-content;
+  top: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 0;
+  visibility: visible;
+  pointer-events: none;
+  border: solid green 1px;
+  background: lightgreen;
+  border-radius: 10px;
+}
+
+.select-option{
+  pointer-events: all;
+  cursor: pointer;
+  width: 100%;
+  padding: 0 2rem;
+}
+.select-option:hover {
+  background: white
+  
+}
+
+.hidden {
+  visibility: hidden;
+}

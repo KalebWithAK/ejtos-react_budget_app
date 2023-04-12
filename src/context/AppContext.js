@@ -13,19 +13,20 @@ export const AppReducer = (state, action) => {
             );
             total_budget = total_budget + action.payload.cost;
             action.type = "DONE";
+
             if(total_budget <= state.budget) {
                 total_budget = 0;
                 state.expenses.map((currentExp)=> {
                     if(currentExp.name === action.payload.name) {
                         currentExp.cost = action.payload.cost + currentExp.cost;
                     }
-                    return currentExp
+                    return currentExp;
                 });
                 return {
                     ...state,
                 };
             } else {
-                alert("Cannot increase the allocation! Out of funds");
+                alert("Cannot increase the allocation! Out of funds, " + total_budget, state);
                 return {
                     ...state
                 }
@@ -34,7 +35,7 @@ export const AppReducer = (state, action) => {
                 const red_expenses = state.expenses.map((currentExp)=> {
                     if (currentExp.name === action.payload.name && currentExp.cost - action.payload.cost >= 0) {
                         currentExp.cost =  currentExp.cost - action.payload.cost;
-                        budget = state.budget + action.payload.cost
+                        budget = state.budget + action.payload.cost;
                     }
                     return currentExp
                 })
@@ -83,7 +84,7 @@ const initialState = {
         { id: "Marketing", name: 'Marketing', cost: 50 },
         { id: "Finance", name: 'Finance', cost: 300 },
         { id: "Sales", name: 'Sales', cost: 70 },
-        { id: "Human Resource", name: 'Human Resource', cost: 40 },
+        { id: "Human Resources", name: 'Human Resource', cost: 40 },
         { id: "IT", name: 'IT', cost: 500 },
     ],
     currency: '£'

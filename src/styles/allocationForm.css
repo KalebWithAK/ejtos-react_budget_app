@@ -1,0 +1,21 @@
+form input, form select {
+  margin-right: 1rem;
+}
+
+form .label {
+  border-radius: 5px;
+  background: lightgray;
+  padding: 0.25rem 0.5rem;
+  margin-right: 0.25rem;
+}
+
+form input[type="submit"] {
+  border-radius: 0 5px 5px 0;
+  border: none;
+  background: blue;
+  color: white;
+  height: auto;
+}
+form input[type="submit"]:hover {
+  background: lightblue;
+}
